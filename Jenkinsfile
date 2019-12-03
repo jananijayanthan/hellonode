@@ -19,7 +19,7 @@ node {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
         
-        sh "./test.js"
+        //sh "./test.js"
         // step{
         //     sh 'npm test.js'
         // }
@@ -30,6 +30,9 @@ node {
         // }
         // echo 'Running test cases'
         // echo "Passed test cases"
+        const shell = require('shelljs')
+        shell.exec('./test.js')
+
     }
 
     stage('Push image') {
