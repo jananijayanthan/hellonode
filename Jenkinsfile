@@ -1,6 +1,12 @@
 node {
     def app
 
+    stage('startup') {
+        /*does npm install into the shell command line*/
+        steps {
+            sh 'npm install'
+        }
+    }
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -30,8 +36,11 @@ node {
         // }
         // echo 'Running test cases'
         // echo "Passed test cases"
-        const shell = require('shelljs')
-        shell.exec('./test.js')
+        // const shell = require('shelljs')
+        // shell.exec('./test.js')
+        steps {
+            sh './test.js'
+        }
 
     }
 
