@@ -38,18 +38,12 @@ node {
         // app.push("latest")
         // }
 
-        withCredentials([usernamePassword( credentialsId: 'docker-hub-credentials', usernameVariable: 'jananijayanthan', passwordVariable: 'Riu6715@_')]) {
-
-        docker.withRegistry('', 'docker-hub-credentials') {
-        sh "docker login -u ${usernameVariable} -p ${passwordVariable}"
-        app.push("${env.BUILD_NUMBER}")
-        app.push("latest")
-        }
+      
                 
         
-        // docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-        //     app.push("${env.BUILD_NUMBER}")
-        //     app.push("latest")
-        // }
+        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials3') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
+        }
     }
 }
