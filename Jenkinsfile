@@ -1,5 +1,12 @@
-node {
+pipeline {
     def app
+    agent{
+        docker{
+            image 'node:7-onbuild'
+            args '-p 8000:8000'
+
+        }
+    }
 
     stage('startup') {
         /*does npm install into the shell command line*/
