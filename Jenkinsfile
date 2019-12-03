@@ -1,6 +1,14 @@
 node {
     def app
 
+    stage('Startup') {
+        step{
+            script{
+                sh 'npm install'
+            }
+        }
+    }
+    
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
@@ -18,7 +26,7 @@ node {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
 
-        steps{
+        step{
             sh 'npm test.js'
         }
         
