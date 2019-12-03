@@ -18,11 +18,14 @@ node {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
 
-        
-        app.inside {
-            //sh 'echo "Tests passed"'
-            sh 'node ./test.js'
+        steps{
+            sh 'npm test'
         }
+        
+        // app.inside {
+        //     //sh 'echo "Tests passed"'
+        //     sh 'node ./test.js'
+        // }
         // echo 'Running test cases'
         // echo "Passed test cases"
     }
