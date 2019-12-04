@@ -18,7 +18,7 @@ node {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
         
-        sh "node test.js"
+        sh "node hellonode/test.js"
         // step{
         //     sh 'npm test.js'
         // }
