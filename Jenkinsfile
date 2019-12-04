@@ -18,8 +18,8 @@ node {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
         
-        sh 'npmstart.sh'
-        sh 'test.sh'
+        sh 'npm start'
+        sh 'curl http://127.0.0.1:8000'
         // step{
         //     sh 'npm test.js'
         // }
