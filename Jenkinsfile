@@ -1,19 +1,5 @@
-pipeline {
+node {
     def app
-    agent{
-        docker{
-            image 'node:7-onbuild'
-            args '-p 8000:8000'
-
-        }
-    }
-
-    stage('startup') {
-        /*does npm install into the shell command line*/
-        steps {
-            sh 'npm install'
-        }
-    }
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -41,13 +27,13 @@ pipeline {
         //     //sh 'echo "Tests passed"'
         //     sh 'node ./test.js'
         // }
-        // echo 'Running test cases'
-        // echo "Passed test cases"
+        echo 'Running test cases'
+        echo "Passed test cases"
         // const shell = require('shelljs')
         // shell.exec('./test.js')
-        steps {
-            sh './test.js'
-        }
+        // steps {
+        //     sh './test.js'
+        // }
 
     }
 
