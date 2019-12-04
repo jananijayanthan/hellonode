@@ -18,6 +18,7 @@ node {
         /* Ideally, we would run a test framework against our image.
          * For this example, we're using a Volkswagen-type approach ;-) */
 
+        sh 'node test.js'
 
         /* the following shell commands start the service to test it but there is no way to stop it
         need to write separate js file to test server, and if response is given to exit - need to do */
