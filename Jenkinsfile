@@ -20,6 +20,7 @@ node {
         
         sh 'npm start'
         sh 'curl http://127.0.0.1:8000'
+        sh '^C'
         // step{
         //     sh 'npm test.js'
         // }
