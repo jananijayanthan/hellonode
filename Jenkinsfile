@@ -1,4 +1,12 @@
+@Library('pipeline-library-demo')_
+
 node {
+    
+    stage('Demo') {
+    echo 'Hello world'
+    sayHello 'Dave'
+    }
+    
     def app
 
     stage('Clone repository') {
